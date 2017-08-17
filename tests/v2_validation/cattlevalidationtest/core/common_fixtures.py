@@ -229,7 +229,7 @@ def client_for_project(project):
     if active_cred.state != 'active':
         wait_success(admin_client, active_cred.activate())
 
-    return from_env(url=cattle_url(),
+    return from_env(url=cattle_url(project.id),
                     cache=False,
                     access_key=access_key,
                     secret_key=secret_key)
