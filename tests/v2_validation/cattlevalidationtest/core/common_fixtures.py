@@ -1599,7 +1599,7 @@ def create_env_with_svc_and_lb(client, scale_svc, scale_lb, port,
     else:
         launch_config_svc = {"imageUuid": WEB_SSL_IMAGE1_UUID}
         target_port = 443
-    launch_config_lb = {"imageUuid": get_haproxy_image()}
+    launch_config_lb = {"imageUuid": "docker:kinarashah/lb:y1")}
     if not internal:
         launch_config_lb["ports"] = [port]
 
