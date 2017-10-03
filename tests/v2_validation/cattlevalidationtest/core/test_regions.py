@@ -218,12 +218,13 @@ def test_regions_setup(admin_user_client, super_client, p1, p2, p3, region_url):
     assert agent2.agentResourcesAccountId == p2.id
 
     # link Default and bar using selector
-    launch_config = {"imageUuid": get_haproxy_image()}
+    launch_config = {"imageUuid": "docker:kinarashah/lb:linux"}
     stack = create_env(client1)
     port_rule = {"protocol": "tcp", "selector": "foo=bar",
                  "environment": p3.name,
                  "region": REGION_NAME,
-                 "sourcePort": 944}
+                 "sourcePort": 944,
+                 "weight": 100}
     port_rules = [port_rule]
     lb_config = {"portRules": port_rules}
 
