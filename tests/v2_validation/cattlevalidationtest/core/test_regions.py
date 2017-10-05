@@ -224,6 +224,7 @@ def test_regions_setup(admin_user_client, super_client, p1, p2, p3, region_url):
                  "environment": p3.name,
                  "region": REGION_NAME,
                  "sourcePort": 944,
+                 "targetPort":80,
                  "weight": 100}
     port_rules = [port_rule]
     lb_config = {"portRules": port_rules}
