@@ -218,7 +218,7 @@ def test_regions_setup(admin_user_client, super_client, p1, p2, p3, region_url):
     assert agent2.agentResourcesAccountId == p2.id
 
     # link Default and bar using selector
-    launch_config = {"imageUuid": "docker:kinarashah/lb:linux"}
+    launch_config = {"imageUuid": "docker:kinarashah/lb:linux2"}
     stack = create_env(client1)
     port_rule = {"protocol": "tcp", "selector": "foo=bar",
                  "environment": p3.name,
